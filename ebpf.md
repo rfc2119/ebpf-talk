@@ -25,12 +25,11 @@ verticalSeparator: -v-
 - Software packet filters allows general-purpose machines for network monitoring
 <!-- .element: class="fragment" -->
 
-notes: so how does properiatery software packet filters / firewalls operate ? their OS should be finely tuned to their hardware, but ¯\_(ツ)_/¯
+notes: so how does properiatery software packet filters / firewalls operate ? their OS should be finely tuned to their hardware, but ¯\\_(ツ)_/¯
 
 ---
 
-<!-- .slide: data-background-image="img/bpf_overview.png"-->
-<!-- .slide:  data-background-image="img/bpf_overview.png" data-background-size="70%" data-background-transition="none" -->
+<!-- .slide:  data-background-image="img/bpf_overview.png" data-background-size="80%" data-background-transition="none" -->
 ### BPF
 
 note: When a packet arrives at a network interface the link level device driver normally sends it up the system protocol stack. But when BPF is listening on this interface, the driver first calls BPF. BPF feeds the packet to each participating process’ filter. This **user-defined** filter decides whether a packet is to be accepted and how many bytes of each packet should be saved. For each filter that accepts the packet, BPF copies the requested amount of data to the buffer associated with that filter. The device driver then regains control. If the packet was not addressed to the local host, the driver returns from the interrupt. Otherwise, normal protocol processing proceeds
@@ -129,7 +128,7 @@ note: data-background-position="bottom"
 
 -v-
 
-<!-- .slide: data-background-color="#ffffff" data-background-transition="none" data-background-image="img/system-call-overview-1.png" data-background-size="100%" data-background-opacity="0.3"-->
+<!-- .slide: data-background-color="#ffffff"  data-background-image="img/system-call-overview-1.png" data-background-size="100%" data-background-opacity="0.3"-->
 #### Transitioning To Kernel Space
 
 -v-
@@ -246,4 +245,4 @@ note: bpf-cilium-turning-linux-into-a-microservicesaware-operating-system-26-638
 <!-- .slide: data-background="img/r2_color_rotate.jpeg" data-background-opacity="0.3" -->
 #### \</eBPF>
 
-slides @ [slides.staticnotdynamic.me/ebpf](https://slides.staticnotdynamic.me/ebpf)
+slides @ [staticnotdynamic.me/ebpf](https://staticnotdynamic.me/ebpf)
