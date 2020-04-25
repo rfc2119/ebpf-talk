@@ -7,7 +7,7 @@ verticalSeparator: -v-
 ---
 
 <!-- .slide: data-background="img/r2_color_rotate.jpeg" data-background-opacity="0.3" -->
-#  Linux's New Superpower - Introducting eBPF
+##  Linux's New Superpower - Introducting eBPF
 
 <small>***REMOVED*** (@***REMOVED***)</small>
 
