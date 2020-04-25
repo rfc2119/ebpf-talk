@@ -29,7 +29,7 @@ notes: so how does properiatery software packet filters / firewalls operate ? th
 
 ---
 
-<!-- .slide:  data-background-image="img/bpf_overview.png" data-background-size="80%" data-background-transition="none" -->
+<!-- .slide:  data-background-image="img/bpf_overview.png" data-background-size="90%" data-background-transition="none" -->
 ### BPF
 
 note: When a packet arrives at a network interface the link level device driver normally sends it up the system protocol stack. But when BPF is listening on this interface, the driver first calls BPF. BPF feeds the packet to each participating process’ filter. This **user-defined** filter decides whether a packet is to be accepted and how many bytes of each packet should be saved. For each filter that accepts the packet, BPF copies the requested amount of data to the buffer associated with that filter. The device driver then regains control. If the packet was not addressed to the local host, the driver returns from the interrupt. Otherwise, normal protocol processing proceeds
@@ -49,6 +49,7 @@ note: When a packet arrives at a network interface the link level device driver 
 <!-- .element: class="fragment" -->
 
 * goals:
+<!-- .element: class="fragment" -->
   * minimize transition to user-space
     <!-- .element: class="fragment" -->
   * filtering packet as efficient as possible
