@@ -223,15 +223,14 @@ note: bpf-cilium-turning-linux-into-a-microservicesaware-operating-system-26-638
 
 * [Understanding User and Kernel Mode](https://blog.codinghorror.com/understanding-user-and-kernel-mode/) - Jeff Atwood
 
-* [User- and Kernel Mode, System Calls, I/O, Exceptions](https://minnie.tuhs.org/CompArch/Lectures/week05.html)
-
 ---
 <!-- .slide: data-background="img/r2_color_rotate.jpeg" data-background-opacity="0.3" -->
 
-* [strace Wow Much Syscall](http://www.brendangregg.com/blog/2014-05-11/strace-wow-much-syscall.html) - Brendan Gregg's Blog
+* [User- and Kernel Mode, System Calls, I/O, Exceptions](https://minnie.tuhs.org/CompArch/Lectures/week05.html)
+
+* [strace Wow Much Syscall](http://www.brendangregg.com/blog/2014-05-11/strace-wow-much-syscall.html) - Brendan Gregg's Bloga
 
 * [XDP](https://www.iovisor.org/technology/xdp)<!-- .element: class="fragment highlight-red" data-fragment-index="1"-->  - IO Visor Project
-
 
 * [Locking down a FreeBSD system with sysctl](https://www.techrepublic.com/blog/it-security/use-sysctl-security-settings-to-lock-down-a-freebsd-system/)
 
