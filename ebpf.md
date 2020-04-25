@@ -190,7 +190,7 @@ also, there's some company out there that made a commercial SDN solution using e
 * take eBPF seriously, it's game changing!
 <!-- .element: class="fragment" -->
 
-* katran (L2-L3 load balancing), goBPF, <span class="fragment highlight-red" data-fragment-index="1">redBPF</span>,  bpfd, <span class="fragment highlight-red" data-fragment-index="1">bpf-seccomp</span>, <span class="fragment highlight-red" data-fragment-index="1">cilium</span>.
+* katran (L2-L3 load balancing), goBPF, <span class="fragment highlight-red" data-fragment-index="2">redBPF</span>,  bpfd, <span class="fragment highlight-red" data-fragment-index="2">bpf-seccomp</span>, <span class="fragment highlight-red" data-fragment-index="2">cilium</span>.
 <!-- .element: class="fragment" -->
 
 note: bpf-cilium-turning-linux-into-a-microservicesaware-operating-system-26-638.jpg
