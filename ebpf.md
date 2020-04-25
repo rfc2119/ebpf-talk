@@ -30,6 +30,7 @@ notes: so how does properiatery software packet filters / firewalls operate ? th
 ---
 
 <!-- .slide: data-background-image="img/bpf_overview.png"-->
+<!-- .slide:  data-background-image="img/bpf_overview.png" data-background-size="70%" data-background-transition="none" -->
 ### BPF
 
 note: When a packet arrives at a network interface the link level device driver normally sends it up the system protocol stack. But when BPF is listening on this interface, the driver first calls BPF. BPF feeds the packet to each participating process’ filter. This **user-defined** filter decides whether a packet is to be accepted and how many bytes of each packet should be saved. For each filter that accepts the packet, BPF copies the requested amount of data to the buffer associated with that filter. The device driver then regains control. If the packet was not addressed to the local host, the driver returns from the interrupt. Otherwise, normal protocol processing proceeds
@@ -50,7 +51,9 @@ note: When a packet arrives at a network interface the link level device driver 
 
 * goals:
   * minimize transition to user-space
+    <!-- .element: class="fragment" -->
   * filtering packet as efficient as possible
+    <!-- .element: class="fragment" -->
 <!-- .element: class="fragment" -->
 
 ---
@@ -91,7 +94,6 @@ An **in-kernel** **sandboxed** VM:
 * Running <span class="fragment highlight-red"> user-space code  inside kernel</span> is a powerful tool for kernel developers and production engineers
 <!-- .element: class="fragment" -->
 
-note: لسبب ما مش عارف أحط  data-fragment-index="4" جوه الspan
 
 -v-
 <!-- .slide: data-background="img/x86-rings-2.png" data-background-opacity="0.3" -->
@@ -182,13 +184,13 @@ also, there's some company out there that made a commercial SDN solution using e
 <!-- .slide: data-background="img/r2_color_rotate.jpeg" data-background-opacity="0.3" -->
 ### outro
 
-* could really do anything with eBPF with high performance and minimal overhead (filter/classify traffic, reactive defensive networking, ... )
+* could do anything  with high performance and minimal overhead (filter/classify traffic, reactive defensive networking, ... )
 <!-- .element: class="fragment" -->
 
-* take eBPF seriously, it's game changing
+* take eBPF seriously, it's game changing!
 <!-- .element: class="fragment" -->
 
-* katran (L2-L3 load balancing), goBPF, <span class="fragment highlight-red" data-fragment-index="1">redBPF</span>,  bpfd, <span class="fragment highlight-red" data-fragment-index="1">bpf-seccomp</span>, <span class="fragment highlight-red" data-fragment-index="1">cilium</span>
+* katran (L2-L3 load balancing), goBPF, <span class="fragment highlight-red" data-fragment-index="1">redBPF</span>,  bpfd, <span class="fragment highlight-red" data-fragment-index="1">bpf-seccomp</span>, <span class="fragment highlight-red" data-fragment-index="1">cilium</span>.
 <!-- .element: class="fragment" -->
 
 note: bpf-cilium-turning-linux-into-a-microservicesaware-operating-system-26-638.jpg
