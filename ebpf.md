@@ -9,7 +9,7 @@ verticalSeparator: -v-
 <!-- .slide: data-background="img/r2_color_rotate.jpeg" data-background-opacity="0.3" -->
 ##  Linux's New Superpower - Introducting eBPF
 
-<small>Ahmad Yusuf (@staticnotdynamic)</small>
+<small></small>
 
 ---
 
@@ -245,4 +245,4 @@ note: bpf-cilium-turning-linux-into-a-microservicesaware-operating-system-26-638
 <!-- .slide: data-background="img/r2_color_rotate.jpeg" data-background-opacity="0.3" -->
 #### \</eBPF>
 
-slides @ [staticnotdynamic.me/ebpf](https://staticnotdynamic.me/ebpf)
+slides @ [.me/ebpf](https://.me/ebpf)
