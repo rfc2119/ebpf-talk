@@ -1,18 +1,25 @@
----
-title: Linux's New Superpowers - Introducting eBPF
-revealOptions:
-  transition: 'none'
-backgroundTransition: 'fade'
-verticalSeparator: -v-
----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Linux's New Superpowers - Introducting eBPF</title>
+    <link rel="shortcut icon" href="./favicon.ico"/>
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
 
 <!-- .slide: data-background="img/r2_color_rotate.jpeg" data-background-opacity="0.3" -->
 ##  Linux's New Superpower - Introducting eBPF
 
 <small>rfc2119</small>
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 <!-- .slide: data-background="img/r2_color_rotate.jpeg" data-background-opacity="0.3" -->
 ## Packet Filtering
 
@@ -25,17 +32,13 @@ verticalSeparator: -v-
 - Software packet filters allows general-purpose machines for network monitoring
 <!-- .element: class="fragment" -->
 
-notes: so how does properiatery software packet filters / firewalls operate ? their OS should be finely tuned to their hardware, but ¯\\_(ツ)_/¯
-
----
-
+<aside class="notes"><p>so how does properiatery software packet filters / firewalls operate ? their OS should be finely tuned to their hardware, but ¯\<em>(ツ)</em>/¯</p>
+</aside></script></section><section  data-markdown><script type="text/template">
 <!-- .slide:  data-background-image="img/bpf_overview.png" data-background-size="90%" data-background-transition="none" -->
 ### BPF
 
-note: When a packet arrives at a network interface the link level device driver normally sends it up the system protocol stack. But when BPF is listening on this interface, the driver first calls BPF. BPF feeds the packet to each participating process’ filter. This **user-defined** filter decides whether a packet is to be accepted and how many bytes of each packet should be saved. For each filter that accepts the packet, BPF copies the requested amount of data to the buffer associated with that filter. The device driver then regains control. If the packet was not addressed to the local host, the driver returns from the interrupt. Otherwise, normal protocol processing proceeds
-
----
-
+<aside class="notes"><p>When a packet arrives at a network interface the link level device driver normally sends it up the system protocol stack. But when BPF is listening on this interface, the driver first calls BPF. BPF feeds the packet to each participating process’ filter. This <strong>user-defined</strong> filter decides whether a packet is to be accepted and how many bytes of each packet should be saved. For each filter that accepts the packet, BPF copies the requested amount of data to the buffer associated with that filter. The device driver then regains control. If the packet was not addressed to the local host, the driver returns from the interrupt. Otherwise, normal protocol processing proceeds</p>
+</aside></script></section><section  data-markdown><script type="text/template">
 <!-- .slide: data-background="img/r2_color_rotate.jpeg" data-background-opacity="0.3" -->
 
 ## BPF
@@ -55,9 +58,7 @@ note: When a packet arrives at a network interface the link level device driver 
   * filtering packet as efficient as possible
     <!-- .element: class="fragment" -->
 <!-- .element: class="fragment" -->
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 <!-- .slide: data-background="img/r2_color_rotate.jpeg" data-background-opacity="0.3" -->
 
 ### BPF
@@ -79,9 +80,7 @@ An **in-kernel** **sandboxed** VM:
 (012) ret      #262144
 (013) ret      #0
 ```
-
----
-
+</script></section><section ><section data-markdown><script type="text/template">
 <!-- .slide: data-background="img/r2_color_rotate.jpeg" data-background-opacity="0.3" -->
 ### eBPF
 
@@ -95,21 +94,20 @@ An **in-kernel** **sandboxed** VM:
 <!-- .element: class="fragment" -->
 
 
--v-
+</script></section><section data-markdown><script type="text/template">
 <!-- .slide: data-background="img/x86-rings-2.png" data-background-opacity="0.3" -->
 
 #### CPU Privilege Levels
 
--v-
+</script></section><section data-markdown><script type="text/template">
 
 <!-- .slide: data-background-transition="none" data-background-color="#ffffff" data-background="img/x86-rings-2.png" -->
 
--v-
+</script></section><section data-markdown><script type="text/template">
 <!-- .slide:  data-background-image="img/x86rings.png" data-background-color="#ffffff"  data-background-size="60%" data-background-transition="none" -->
 
-note: data-background-position="bottom"
-
--v-
+<aside class="notes"><p>data-background-position=&quot;bottom&quot;</p>
+</aside></script></section><section data-markdown><script type="text/template">
 <!-- .slide: data-background-color="#ffffff" data-background-transition="none" -->
 
 #### CPU Privilege Levels
@@ -127,16 +125,16 @@ note: data-background-position="bottom"
 
   * crash = throw an exception <!-- .element: class="fragment" -->
 
--v-
+</script></section><section data-markdown><script type="text/template">
 
 <!-- .slide: data-background-color="#ffffff"  data-background-image="img/system-call-overview-1.png" data-background-size="100%" data-background-opacity="0.3"-->
 #### Transitioning To Kernel Space
 
--v-
+</script></section><section data-markdown><script type="text/template">
 
 <!-- .slide: data-background-color="#ffffff" data-background-transition="none" data-background-image="img/system-call-overview-1.png" data-background-size="100%"-->
 
--v-
+</script></section><section data-markdown><script type="text/template">
 
 <!-- .slide: data-background-color="#ffffff" data-background-transition="none"-->
 #### Transitioning To Kernel Space
@@ -146,17 +144,13 @@ note: data-background-position="bottom"
 
 3. hardware Interrupts <!-- .element: class="fragment" -->
 
-note: see img/ARM-shell-0.png.pagespeed.ce.6wC1FtlsVk.png
-
----
-
+<aside class="notes"><p>see img/ARM-shell-0.png.pagespeed.ce.6wC1FtlsVk.png</p>
+</aside></script></section></section><section  data-markdown><script type="text/template">
 <!-- .slide: data-background="img/r2_color_rotate.jpeg" data-background-opacity="0.3" -->
 
 #### How it works
 ![Compile_bpf_Syscall.PNG](img/Compile_bpf_Syscall_org.PNG)
-
----
-<!-- .slide: data-background="img/r2_color_rotate.jpeg" data-background-opacity="0.3" -->
+</script></section><section  data-markdown><script type="text/template"><!-- .slide: data-background="img/r2_color_rotate.jpeg" data-background-opacity="0.3" -->
 
 ### SDN with XDP
 <!-- .element text-align="left" -->
@@ -177,11 +171,9 @@ note: see img/ARM-shell-0.png.pagespeed.ce.6wC1FtlsVk.png
 * [Netronome](https://www.wikiwand.com/en/Netronome) NICs has native support for XDP
 <!-- .element: class="fragment" -->
 
-note: from wiki: The idea behind XDP is to add an early hook in the RX path of the kernel, and let a user supplied eBPF program decide the fate of the packet. The hook is placed in the [NIC](https://en.wikipedia.org/wiki/Network_interface_controller) driver just after the [interrupt](https://en.wikipedia.org/wiki/Interrupt) processing, and before any memory allocation needed by the [network stack](https://en.wikipedia.org/wiki/Protocol_stack) itself, because memory allocation can be an expensive operation
-also, there's some company out there that made a commercial SDN solution using eBPF
-
----
-<!-- .slide: data-background="img/r2_color_rotate.jpeg" data-background-opacity="0.3" -->
+<aside class="notes"><p>from wiki: The idea behind XDP is to add an early hook in the RX path of the kernel, and let a user supplied eBPF program decide the fate of the packet. The hook is placed in the <a href="https://en.wikipedia.org/wiki/Network_interface_controller">NIC</a> driver just after the <a href="https://en.wikipedia.org/wiki/Interrupt">interrupt</a> processing, and before any memory allocation needed by the <a href="https://en.wikipedia.org/wiki/Protocol_stack">network stack</a> itself, because memory allocation can be an expensive operation
+also, there&#39;s some company out there that made a commercial SDN solution using eBPF</p>
+</aside></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: data-background="img/r2_color_rotate.jpeg" data-background-opacity="0.3" -->
 ### outro
 
 * could do anything  with high performance and minimal overhead (filter/classify traffic, reactive defensive networking, ... )
@@ -193,13 +185,12 @@ also, there's some company out there that made a commercial SDN solution using e
 * katran (L2-L3 load balancing), goBPF, <span class="fragment highlight-red" data-fragment-index="2">redBPF</span>,  bpfd, <span class="fragment highlight-red" data-fragment-index="2">bpf-seccomp</span>, <span class="fragment highlight-red" data-fragment-index="2">cilium</span>.
 <!-- .element: class="fragment" -->
 
-note: bpf-cilium-turning-linux-into-a-microservicesaware-operating-system-26-638.jpg
-
--v-
+<aside class="notes"><p>bpf-cilium-turning-linux-into-a-microservicesaware-operating-system-26-638.jpg</p>
+</aside></script></section><section data-markdown><script type="text/template">
 
 <!-- .slide: data-background-image="img/cilium.png" -->
 
--v-
+</script></section><section data-markdown><script type="text/template">
 <!-- .slide: data-background="img/r2_color_rotate.jpeg" data-background-opacity="0.3" -->
 
 ### Usages
@@ -207,9 +198,7 @@ note: bpf-cilium-turning-linux-into-a-microservicesaware-operating-system-26-638
 * eBPF is especially suited to writing network programs and it's possible to write programs that attach to a network socket to filter traffic, to classify traffic, and to run network classifier actions
 * Another type of filtering performed by the kernel is restricting which system calls a process can use. This is done with [seccomp BPF](https://lwn.net/Articles/656307/). (see `pledge` syscall and `sysctl security.bsd` in bsd)
 * eBPF is also useful for debugging the kernel and carrying out performance analysis (and also user). It's even possible to use eBPF to debug user-space programs by using [Userland Statically Defined Tracepoints](http://blog.memsql.com/bpf-linux-performance/)
-
----
-<!-- .slide: data-background="img/r2_color_rotate.jpeg" data-background-opacity="0.3" -->
+</script></section></section><section  data-markdown><script type="text/template"><!-- .slide: data-background="img/r2_color_rotate.jpeg" data-background-opacity="0.3" -->
 
 ### Resources
 
@@ -222,9 +211,7 @@ note: bpf-cilium-turning-linux-into-a-microservicesaware-operating-system-26-638
 * [BPF Performance Tools: Linux System and Application Observability](https://www.oreilly.com/library/view/bpf-performance-tools/9780136588870/)- Brendan Gregg's Blog (see [example chapter](https://www.oreilly.com/library/view/linux-observability-with/9781492050193/ch07.html) on observability)
 
 * [Understanding User and Kernel Mode](https://blog.codinghorror.com/understanding-user-and-kernel-mode/) - Jeff Atwood
-
----
-<!-- .slide: data-background="img/r2_color_rotate.jpeg" data-background-opacity="0.3" -->
+</script></section><section  data-markdown><script type="text/template"><!-- .slide: data-background="img/r2_color_rotate.jpeg" data-background-opacity="0.3" -->
 
 * [User- and Kernel Mode, System Calls, I/O, Exceptions](https://minnie.tuhs.org/CompArch/Lectures/week05.html)
 
@@ -240,9 +227,59 @@ note: bpf-cilium-turning-linux-into-a-microservicesaware-operating-system-26-638
 
 * [eBPF Vulnerability](https://blog.aquasec.com/ebpf-vulnerability-cve-2017-16995-when-the-doorman-becomes-the-backdoor) (CVE-2017-16995)
 <!-- .element: class="fragment highlight-red" data-fragment-index="1"-->
-
----
-<!-- .slide: data-background="img/r2_color_rotate.jpeg" data-background-opacity="0.3" -->
+</script></section><section  data-markdown><script type="text/template"><!-- .slide: data-background="img/r2_color_rotate.jpeg" data-background-opacity="0.3" -->
 #### \</eBPF>
 
 slides @ [rfc2119.github.io/ebpf-talk](https://rfc2119.github.io/ebpf-talk)
+</script></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"transition":"none"}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
